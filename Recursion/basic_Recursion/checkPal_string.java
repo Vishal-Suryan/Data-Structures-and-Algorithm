@@ -18,8 +18,21 @@ public class checkPal_string {
         }
         return true;
     }
+    public static boolean palindrome(int i,String str){
+        //base condition
+        if(i>=str.length()/2){
+            return true;
+        }
+        if(Character.toLowerCase(str.charAt(i))!= Character.toLowerCase(str.charAt(str.length()-i-1))){
+            return false;
+        }
+        palindrome(i+1, str);
+        return true;
+
+    }
     public static void main(String[] args) {
-        String str = "12madaM12";
+        String str = "Madam";
+        System.out.println(palindrome(0, str));
         if(isPalindrome(str)==true){
             System.out.println("String is Palindrome");
         }else{
