@@ -3,9 +3,7 @@ public class fibonacci {
             if(N <= 1){
                 return N;
             }
-            int last = fibonacci(N-1);
-            int slast = fibonacci(N-2); 
-            return last + slast;
+            return fibonacci(N-1)+fibonacci(N-2);
     }
     //program for getting nth fibonacci number
         public static void main(String[] args) {
