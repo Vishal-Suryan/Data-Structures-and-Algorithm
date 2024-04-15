@@ -12,14 +12,16 @@ public class duplicate {
         remove_duplicate(arr);
     }
     static void remove_duplicate(int[] arr){
-        int j=0;
+        int j=1;
         int[] filter_array=new int[arr.length];
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==arr[i++]){
+        filter_array[0]=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i-1]==arr[i]){
                 continue;
             }
             filter_array[j++]=arr[i];
         }
+        filter_array = Arrays.copyOf(filter_array, j);
         System.out.println("Filtered Array: "+Arrays.toString(filter_array));
         return;
     }
