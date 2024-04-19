@@ -15,7 +15,7 @@ public class missing {
         
     }
 
-    static void missingNumber(int ld,int[] arr){
+    static void missingNumber(int ld,int[] arr){ //works just fine but takes more time to run O(N)
         int i=0;
         Arrays.sort(arr);
         while(i<arr.length){
@@ -31,4 +31,15 @@ public class missing {
         }
         return;
     }
+    /* class Solution {                 OPTIMAL APPROACH ->> TAKES LESS TIME IN LINEAR 
+        public int missingNumber(int[] arr) {
+            int last_digit=arr.length;
+            int sum1= (last_digit*(last_digit+1))/2;
+            int sum2 = 0;   
+            for(int i=0;i<arr.length;i++){
+                sum2+=arr[i];
+            }
+            return sum1 - sum2 ;
+        }
+    } */
 }
