@@ -13,6 +13,6 @@ class Solution {
                 max2=arr[i];
             }
         }
-        return max2;
+        return (max2==Integer.MIN_VALUE) ?  -1 :  max2;
     }
 }
