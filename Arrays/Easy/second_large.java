@@ -10,7 +10,7 @@ public class second_large{
             arr[i]=sc.nextInt();
         }
         sec_largest(arr);
-        sec_smallest(arr);
+        //sec_smallest(arr);
     }
 
     static void sec_largest(int[] arr) {
@@ -18,9 +18,9 @@ public class second_large{
             System.out.println("Array is too small to have a second largest element");
             return;
         }
-        int max = arr[0];
-        int max2 = arr[1]; // Initialize max2 assuming at least two elements
-        for (int i = 2; i < arr.length; i++) {
+        int max= Integer.MIN_VALUE;
+        int max2= Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
                 max2 = max;
                 max = arr[i];
@@ -36,9 +36,9 @@ public class second_large{
             System.out.println("Array is too small to have a second smallest element");
             return;
         }
-        int min = arr[0];
+        int min = Integer.MAX_VALUE;
         int min2 = Integer.MAX_VALUE; // Initialize min2 to a larger value
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] < min) {  // Update min2 whenever a new element is less than min
                 min2 = min;
                 min = arr[i];
