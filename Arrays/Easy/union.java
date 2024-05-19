@@ -43,7 +43,7 @@ public class union {
         return;
 
     }
-    /* public static void union(int[] arr, int[] arr2) {
+    public static void union2(int[] arr, int[] arr2) {
         Set<Integer> elements = new HashSet<>();
       
         for (int i = 0; i < arr.length; i++) {
@@ -58,5 +58,5 @@ public class union {
           System.out.print(element + " ");
         }
       }
-       */
+      
 }

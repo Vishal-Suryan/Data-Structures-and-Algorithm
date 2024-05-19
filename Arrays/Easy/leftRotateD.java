@@ -11,7 +11,7 @@ public class leftRotateD{
         }
         System.out.print("By How many places you want to rotate the array: ");
         int rotateBy= sc.nextInt();
-        left_rotateDd(arr,rotateBy);
+        right_rotateDd(arr,rotateBy);
     }
     /* static void left_rotateD(int [] arr, int rotateBy){
         int j=0;
@@ -28,10 +28,11 @@ public class leftRotateD{
         System.out.print("Left Rotated Array by "+rotateBy+" places: "+Arrays.toString(temp));
         return;
     } */
-    static void left_rotateDd(int[] arr, int rotateBy) {
+    static void right_rotateDd(int[] arr, int rotateBy) {
         int n = arr.length;  
         int[] temp = new int[n];  
         for (int i = 0; i < n; i++) {
+            //for left Rotate ->   newIndex =(n - rotateBy + i) % n ;
             int newIndex = (i + rotateBy) % n;  
             temp[newIndex] = arr[i];  
         }
