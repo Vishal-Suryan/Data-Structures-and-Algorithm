@@ -9,9 +9,9 @@ public class consecutiveOne {
         for(int i=0;i<arr.length;i++){
             arr[i]=sc.nextInt();
         }
-        consecutiveOne(arr);
+        System.out.println(consecutiveOne(arr));
     }
-    public static void consecutiveOne(int[] arr){
+    public static int consecutiveOne(int[] arr){
         int count =0;
         int maxcount=0;
         for(int i=0;i<arr.length;i++){
@@ -22,12 +22,6 @@ public class consecutiveOne {
                 count=0;
             }
         }
-        if(maxcount>count){
-            System.out.println(maxcount);
-        }else{
-            System.out.println(count);
-
-        }
-        return;
+        return (maxcount>count)? maxcount: count;
     }
 }
