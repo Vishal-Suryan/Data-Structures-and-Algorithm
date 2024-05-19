@@ -9,7 +9,7 @@ public class leftRotate{
         for(int i=0;i<arr.length;i++){
             arr[i]=sc.nextInt();
         }
-        left_rotate(arr);
+        leftRotate(arr);
     }
     static void left_rotate(int [] arr){
         int j=0;
@@ -25,4 +25,14 @@ public class leftRotate{
         System.out.print("Left Rotated Array: "+Arrays.toString(temp));
         return;
     }
+    static void leftRotate(int[] nums){
+        int temp= nums[0];
+        for(int i=1;i<nums.length;i++){
+            nums[i-1]=nums[i];
+        }
+        nums[nums.length-1]=temp;
+        System.out.print("Left Rotated Array By one place: "+Arrays.toString(nums));
+        return;
+    }
+
 }
