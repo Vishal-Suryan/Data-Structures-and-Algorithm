@@ -21,23 +21,20 @@ public class twosum {
         return res;
     }
     public static int[] twoSum2(int[] nums, int targetSum){
-        //works but time limit gets exceeded for very large input of array
-        int[] res=new int[2];
         Arrays.sort(nums);
         int right=nums.length-1;
         int left=0;
         while(left<right){
             int sum=nums[left]+nums[right];
             if(sum==targetSum){
-                res[0]=nums[left];
-                res[1]=nums[right];
+                return new int[] {nums[left],nums[right]};
             }else if(sum<targetSum){
                 left++;
             }else{
                 right--;
             }
         }
-        return res;
+        return new int[] {};
     }
     
 
