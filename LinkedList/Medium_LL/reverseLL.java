@@ -19,5 +19,15 @@ public class reverseLL {
                }
                return prev;
            }
+           public ListNode reverseListRecursive(ListNode head) { //Recursive Method
+            if(head==null || head.next==null){
+                return head;
+            }
+            ListNode newHead=reverseListRecursive(head.next);
+            ListNode front=head.next;
+            front.next=head;
+            head.next=null;
+            return newHead;
+        }
        }
 }
