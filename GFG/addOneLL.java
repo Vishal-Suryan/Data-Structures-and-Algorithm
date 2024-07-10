@@ -49,5 +49,28 @@ public class addOneLL {
             }
             return null;
         }
+        private static int helper(Node temp){
+            if(temp==null){
+                return 1;
+            }
+            int carry=helper(temp.next);
+            temp.data+=carry;
+            if(temp.data < 10){
+                return 0;
+            }
+            temp.data=0;
+            return 1;
+        }
+        public static Node addOne1(Node head) 
+        { 
+            //code here.
+            int carry =helper(head);
+            if(carry!=0){
+                Node nH=new Node(carry);
+                nH.next=head;
+                return nH;
+            }
+            return head;
+        }
     }
 }
