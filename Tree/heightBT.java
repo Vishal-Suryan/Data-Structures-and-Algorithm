@@ -14,6 +14,14 @@ public class heightBT {
       }
     }
     class Solution {
+        public int maxDepth_recursion(TreeNode root) {
+            if(root==null){
+                return 0;
+            }
+            int leftHeight=maxDepth_recursion(root.left);
+            int rightHeight=maxDepth_recursion(root.right);
+            return Math.max(leftHeight,rightHeight) + 1;
+        }
         public int maxDepth(TreeNode root) {
             int count =0;
             if(root==null){
