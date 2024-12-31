@@ -38,20 +38,20 @@ public class verticalOrderBT {
             while(!q.isEmpty()){
                 Tuple tuple=q.poll();
                 TreeNode node=tuple.node;
-                int x=tuple.row;
-                int y=tuple.col;
-                if(!mp.containsKey(x)){
-                    mp.put(x,new TreeMap<>());
+                int row=tuple.row;
+                int col=tuple.col;
+                if(!mp.containsKey(col)){
+                    mp.put(col,new TreeMap<>());
                 }
-                if(!mp.get(x).containsKey(y)){
-                    mp.get(x).put(y,new PriorityQueue<>());
+                if(!mp.get(col).containsKey(row)){
+                    mp.get(col).put(row,new PriorityQueue<>());
                 }
-                mp.get(x).get(y).offer(node.val);
+                mp.get(col).get(row).offer(node.val);
                 if(node.left !=null){
-                    q.offer(new Tuple(node.left,x-1,y+1));
+                    q.offer(new Tuple(node.left,row+1,col-1));
                 }
                 if(node.right !=null){
-                    q.offer(new Tuple(node.right,x+1,y+1));
+                    q.offer(new Tuple(node.right,row+1,col+1));
                 }
             }
             List<List<Integer>> list=new ArrayList<>();
