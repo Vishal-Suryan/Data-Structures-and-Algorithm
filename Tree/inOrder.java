@@ -47,4 +47,32 @@ class inOrder{
         }
         return ans;
     }
+    public List<Integer> inorderMorrisTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        TreeNode curr = root;
+        while (curr != null) {
+            if (curr.left == null) {
+                // No left child, process current node and move to the right
+                result.add(curr.val);
+                curr = curr.right;
+            } else {
+                // Find the inorder predecessor
+                TreeNode pred = curr.left;
+                while (pred.right != null && pred.right != curr) {
+                    pred = pred.right;
+                }
+                if (pred.right == null) {
+                    // Establish thread to current node
+                    pred.right = curr;
+                    curr = curr.left;
+                } else {
+                    // Thread exists, revert the tree structure
+                    pred.right = null;
+                    result.add(curr.val); // Process current node
+                    curr = curr.right;
+                }
+            }
+        }
+        return result;
+    }
 }
