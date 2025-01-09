@@ -3,11 +3,11 @@ import java.util.Queue;
 
 class stUsingLL{
     class MyStack {
-        private Queue<Integer> helper;
+        //private Queue<Integer> helper;
         private Queue<Integer> q;
         public MyStack() {
             q=new LinkedList<>();
-            helper=new LinkedList<>();
+            //helper=new LinkedList<>();
         }
         
         /* public void push(int x) {
