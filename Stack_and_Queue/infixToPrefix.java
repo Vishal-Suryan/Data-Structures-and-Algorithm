@@ -40,10 +40,12 @@ public class Main {
           }
           st.pop();
       }else{
-          while(!st.isEmpty() && priority(st.peek()) >= priority(chr)){
-              ans.append(st.pop());
-          }
-          st.push(chr);
+        if(chr=='^'){
+            while(!st.isEmpty() && priority(st.peek()) >= priority(chr)){
+                ans.append(st.pop());
+            }
+            st.push(chr);
+        }
       }
   }
   while(!st.isEmpty()){
