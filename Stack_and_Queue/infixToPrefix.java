@@ -45,6 +45,11 @@ public class Main {
                 ans.append(st.pop());
             }
             st.push(chr);
+        }else{
+            while(!st.isEmpty() && priority(st.peek()) > priority(chr)){
+                ans.append(st.pop());
+            }
+            st.push(chr);
         }
       }
   }
