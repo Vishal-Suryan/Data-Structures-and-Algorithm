@@ -1,9 +1,13 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class bfs {
     class Solution {
         // Function to return Breadth First Traversal of given graph.
         public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
             // code here
-            int startingNode = V;
+            //int startingNode = V;
             Queue<Integer> q=new LinkedList<>();
             boolean[] visited=new boolean[V];
             ArrayList<Integer> bfs=new ArrayList<>();
