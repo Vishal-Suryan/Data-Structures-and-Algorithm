@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class detectCycleUndirectedGraph {
+    // ------ BFS Solution ------ //
     class Solution {
     // Function to detect cycle in an undirected graph.
     class Pair{
