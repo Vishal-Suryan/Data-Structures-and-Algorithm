@@ -37,4 +37,42 @@ public class safeState {
             return safeNodes;
         }
     }
+    // DFS Solution //
+    class SolutionDFS {
+        public List<Integer> eventualSafeNodes(int[][] graph) {
+            int n = graph.length;
+            int[] vis = new int[n];
+            int[] pathVis = new int[n];
+            int[] check = new int[n];
+            for(int i = 0; i<n; i++){
+                if(vis[i] == 0){
+                    dfs(i, vis, pathVis, check, graph);
+                }
+            }
+            List<Integer> res = new ArrayList<>();
+            for(int i = 0; i<n; i++){
+                if(check[i] == 1){
+                    res.add(i);
+                }
+            }
+            return res;
+        }
+        private boolean dfs(int node, int[] vis, int[] pathVis, int[] check, int[][] graph){
+            vis[node] = 1;
+            pathVis[node] = 1;
+            check[node] = 0;
+            for(int itr : graph[node]){
+                if(vis[itr] == 0){
+                    if(dfs(itr, vis, pathVis, check, graph)){
+                        return true;
+                    }
+                }else if(pathVis[itr] == 1){
+                    return true;
+                }
+            }
+            check[node] = 1;
+            pathVis[node] = 0;
+            return false;
+        }
+    }
 }
