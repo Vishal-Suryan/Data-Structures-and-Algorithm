@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class maximumCandies_2226 {
     class Solution {
         public int maximumCandies(int[] candies, long k) {

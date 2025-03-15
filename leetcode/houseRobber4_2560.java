@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class houseRobber4_2560 {
     class Solution {
         public int minCapability(int[] nums, int k) {
