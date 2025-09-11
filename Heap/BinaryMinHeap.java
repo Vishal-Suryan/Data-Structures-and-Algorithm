@@ -1,5 +1,5 @@
 import java.util.*;
-class MinHeap {
+class BinaryMinHeap {
     // To store array of elements in heap
     private int[] heapArray;
     // max size of the heap
@@ -7,7 +7,7 @@ class MinHeap {
     // Current number of elements in the heap
     private int current_heap_size;
     // Constructor 
-    public MinHeap(int n) {
+    public BinaryMinHeap(int n) {
         capacity = n;
         heapArray = new int[capacity];
         current_heap_size = 0;
