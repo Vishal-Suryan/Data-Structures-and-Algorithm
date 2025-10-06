@@ -16,7 +16,7 @@ class Solution {
         dp[x][y] = right + down;
         return dp[x][y];
     }
-    public int uniquePaths(int m, int n) { // Bottom - Up -- Tabulation
+    public int uniquePaths1(int m, int n) { // Bottom - Up -- Tabulation
         int[][] dp = new int[m][n];
         dp[m - 1][n - 1] = 1;
         for(int i = m - 1; i >= 0; i--){
@@ -28,5 +28,32 @@ class Solution {
             }
         }
         return dp[0][0];
+    }
+    public int uniquePaths2(int m, int n) { // Space optimized - 2 - 1D array
+        int[] next = new int[n]; //  represents the bottom-most row
+        Arrays.fill(next, 1);
+        for(int i = m - 2; i >= 0; i--){
+            int[] curr = new int[n];
+            for(int j = n - 1; j >= 0; j--){
+                if(j == n - 1){
+                    curr[j] = 1; // last column → only one way (down)
+                }else{
+                    curr[j] = curr[j + 1] + next[j]; // right + down
+                }
+            }
+            next = curr; // move up
+        }
+
+        return next[0];
+    }
+    public int uniquePaths3(int m, int n) { // Space optimized - 1 - 1D array
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+        for(int i = m - 2; i >= 0; i--){
+            for(int j = n - 2; j >= 0; j--){
+                dp[j] = dp[j] + dp[j + 1];
+            }
+        }
+        return dp[0];
     }
 }
